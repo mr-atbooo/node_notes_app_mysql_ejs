@@ -1,0 +1,16 @@
+<!-- views/includes/add_note.ejs-->
+<form  action="/store-notes" method="POST">
+    <div class="card-body">
+        <h5 class="card-title">Create New Note</h5>
+
+        <div class="form-group">
+            <input type="hidden" name="key" value="">
+            <textarea id="addTxt" name="text" class="form-control rounded-0" rows="3"></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary rounded-0">Add Note</button>
+            <button id="cancelBtn" class="btn btn-secindary rounded-0 border">Cancel</button>
+        </div>
+
+    </div>
+</form>

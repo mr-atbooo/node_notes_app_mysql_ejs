@@ -1,0 +1,12 @@
+<!-- views/index.ejs-->
+<%- include('./includes/header',{pageTitle:pageTitle}) %>
+    <div class="container my-3">
+        <h2 class="text-center">Simple Notes App using JavaScript</h2>
+        <div class="card shadow-sm rounded-0">
+            <%- include('./includes/add_note') %>  
+        </div>
+        <hr>
+       
+    <%- include('./includes/notes',{allNotes:allNotes}) %>    
+    <%- include('./includes/footer') %>    
+    

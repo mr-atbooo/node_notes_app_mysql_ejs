@@ -1,0 +1,31 @@
+<!-- views/includes/notes.ejs-->
+<% if(allNotes.length > 0){ %>
+    <h2 class="text-center">Notes List</h2>
+    <hr>
+    
+    <div id="notes" class="row container-fluid m-2">
+      <% let noteIndex =0; %>
+        <% for(let singleNote of allNotes){ %>
+          <%  noteIndex=noteIndex+1; %>
+        <div class="card noteCard m-2 shadow-sm rounded-0" >
+            <div class="card-body">
+              <h5 class="card-title">Note <%=noteIndex  %></h5>
+              <p class="card-text"> <%=singleNote.title %> </p>
+              <div class="text-center">
+                <a href="/notes/<%=singleNote.id %>/edit?edit=true"  style="display: inline-block;" 
+                  class="btn btn-primary  btn-sm rounded-0">
+                  Edit
+                </a>
+                  <form action="/delete-notes" method="post"  
+                  style="display: inline-block;" >
+                    <input type="hidden" name="id" value="<%=singleNote.id %>">
+                    <button class="btn btn-sm rounded-0 btn-danger type="submit">Delete</button>
+                </form>
+              </div>
+             </div>
+        </div>
+        <% } %>
+    </div>
+    <% }else{ %>
+        <h1>No Notes Are Found!</h1>
+    <% } %>
